@@ -1,0 +1,364 @@
+body {
+    overflow-x: hidden;
+    animation: fadeToGray 4s 10s forwards;
+  }
+  
+  .loading_screen {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @mixin bgTemplate {
+    height: 100vh;
+    width: 100vw;
+    bottom: -100%;
+    background-color: #333;
+    position: absolute;
+    z-index: 100;
+    animation: backgroundTrans 4s 10s ease-in-out forwards;
+  }
+  
+  .bg {
+    @include bgTemplate();
+    // background-color: #2c3639;
+    background-color: #333;
+    z-index: 99;
+    animation: backgroundReveal 4s 10s ease-in-out forwards;
+    &.suck {
+      animation: backgroundSuck 0.01s 2s forwards;
+      background-color: var(--bg-main);
+    }
+    &.instasuck {
+      animation: backgroundSuck 0.01s forwards;
+      background-color: var(--bg-main);
+    }
+    &_trans {
+      @include bgTemplate();
+    }
+    &_skip {
+      @include bgTemplate();
+      bottom: 0;
+      right: -100%;
+      &.play {
+        animation: backgroundSkip 2s ease-in-out forwards,
+          opacityOut 1s 2s forwards, ridden 1s 2s forwards;
+      }
+    }
+  }
+  
+  .btn {
+    &_skip {
+      font-size: 1.2rem;
+      margin: 2.4rem;
+      padding: 0.8rem 2.4rem;
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      border-radius: 1000rem;
+      transition: 0.2s;
+      user-select: none;
+      animation: fadeIn 1s ease-in-out forwards, slideIn 1s ease-in-out forwards;
+      &:hover {
+        background-color: black;
+        cursor: pointer;
+      }
+      &:active {
+        color: rgb(231, 226, 255);
+      }
+    }
+  }
+  
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeToWhite 4s 10s forwards;
+    & .top {
+      animation: fadeIn 1s ease-in-out, slideIn 1s ease-in-out;
+    }
+    & .bottom {
+      animation: fadeIn 1s 1s ease-in-out backwards;
+    }
+    &_main {
+      animation: floating 8s ease-in-out infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #eee;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.2rem;
+      & .bottom {
+        text-align: center;
+      }
+    }
+  }
+  
+  .learn_more {
+    margin-top: 2.4rem;
+    font-size: 2.4rem;
+    padding: 1.2rem 2.4rem;
+    border: 0.2rem solid orange;
+    border-radius: 10000rem;
+    font-size: 1.8rem;
+    transition: 0.5s;
+    &:hover {
+      cursor: pointer;
+      border-color: #d6efd8;
+    }
+  }
+  
+  .road {
+    width: 100vw;
+    height: 10rem;
+    background-color: #333;
+    position: absolute;
+    bottom: 10%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    animation: slideInLeft 1s 2s ease-out backwards,
+      roadTrans 4s 10s ease-in-out forwards;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translate(-95%, -50%);
+      width: 2000%;
+      height: 10%;
+      background: repeating-linear-gradient(
+        to left,
+        #ffffff,
+        #ffffff 3rem,
+        #333 1rem,
+        #333 5rem
+      );
+      animation: roadLine 15s linear;
+    }
+  }
+  
+  .car {
+    width: 15rem;
+    height: 8rem;
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    z-index: 50;
+    animation: opacity 0.1s 3s backwards, driving1 2s 3s ease-out forwards,
+      driving2 3s 5s linear forwards, driving3 3s 8s ease-in forwards,
+      rotate 2s 9s linear forwards;
+    & .denzelle {
+      position: absolute;
+      width: inherit;
+      &.side {
+        opacity: 1;
+        animation: opacityOut 0s 5s forwards;
+      }
+      &.face {
+        opacity: 1;
+        animation: opacityOut 0s 0.5s forwards, opacity 0s 5s forwards,
+          opacityOut 0s 6.5s forwards;
+      }
+      &.smile_container {
+        opacity: 1;
+        animation: opacityOut 0s 0.5s forwards, opacity 0s 6.5s forwards;
+        position: relative;
+        &::before {
+          content: "its great to see you";
+          opacity: 0;
+          animation: opacity 0.5s 6.5s forwards, opacityOut 0.5s 8s forwards;
+          font-size: 1.8rem;
+          white-space: nowrap;
+          width: 100%;
+          left: 50%;
+          transform: translate(-50%, -150%);
+          position: absolute;
+        }
+      }
+    }
+  }
+  
+  // ANIMATION
+  
+  @keyframes ridden {
+    0% {
+      visibility: visible;
+    }
+    100% {
+      visibility: hidden;
+      display: none;
+    }
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translate(-50%, -60%);
+    }
+    50% {
+      transform: translate(-50%, -40%);
+    }
+    100% {
+      transform: translate(-50%, -60%);
+    }
+  }
+  
+  @keyframes fadeToWhite {
+    0%,
+    30% {
+      color: black;
+    }
+    80% {
+      color: white;
+    }
+  }
+  
+  @keyframes fadeToGray {
+    0%,
+    30% {
+      background-color: white;
+    }
+    80% {
+      background-color: #333;
+    }
+  }
+  
+  @keyframes backgroundSkip {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 0%;
+    }
+  }
+  
+  @keyframes backgroundSuck {
+    0% {
+      bottom: -100%;
+    }
+    100% {
+      bottom: 0%;
+    }
+  }
+  
+  @keyframes backgroundReveal {
+    0%,
+    30% {
+      bottom: -100%;
+    }
+    80% {
+      background-color: #333;
+    }
+    100% {
+      bottom: 0%;
+      background-color: var(--bg-main);
+    }
+  }
+  
+  @keyframes backgroundTrans {
+    0%,
+    30% {
+      height: 100vh;
+      bottom: -100%;
+    }
+    80% {
+      background-color: #333;
+    }
+    100% {
+      height: 105vh;
+      bottom: 100%;
+      background-color: var(--bg-main);
+    }
+  }
+  
+  @keyframes roadTrans {
+    0% {
+      bottom: 10%;
+    }
+    30% {
+      bottom: 0%;
+    }
+    100% {
+      bottom: 200%;
+    }
+  }
+  
+  @keyframes driving1 {
+    0% {
+      right: -10%;
+      bottom: 15%;
+    }
+    100% {
+      right: 20%;
+      bottom: 15%;
+    }
+  }
+  
+  @keyframes driving2 {
+    0% {
+      right: 20%;
+      bottom: 15%;
+    }
+    100% {
+      right: 35%;
+      bottom: 15%;
+    }
+  }
+  
+  @keyframes driving3 {
+    0% {
+      right: 35%;
+      bottom: 15%;
+    }
+    100% {
+      right: 110%;
+      bottom: 5%;
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-40deg);
+    }
+  }
+  
+  @keyframes opacityOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes roadLine {
+    0% {
+      transform: translate(-95%, -50%);
+    }
+    100% {
+      transform: translate(-80%, -50%);
+    }
+  }
+  

@@ -1,0 +1,300 @@
+// GLOBAL DECLARATIONS
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "raleway", sans-serif;
+}
+
+// END
+// --------------------------------------------
+// FUNCTIONS
+
+.heading {
+  &_primary {
+    font-size: 4.2rem;
+    font-weight: 700;
+  }
+  &_secondary {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  &_tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+@mixin heading {
+  color: var(--bg-sec);
+  text-shadow: rgba(0, 0, 0, 0.2) 0.2rem 0.2rem 0rem;
+  font-weight: 600;
+  font-size: 3.6rem;
+  background-color: var(--bg-main);
+  box-shadow: rgb(0, 0, 255, 0.2) 0.4rem 0.4rem 0rem,
+    rgb(255, 0, 0, 0.2) -0.4rem -0.4rem 0rem;
+  padding: 1.2rem 3.6rem;
+  border-radius: 1000rem;
+  display: inline-block;
+  pointer-events: none;
+  user-select: none;
+  margin: 0 4.8rem;
+}
+
+.section {
+  & .heading {
+    & .heading_text {
+      @include heading;
+    }
+    &.op .heading_text {
+      @include heading;
+      color: var(--bg-main);
+      background-color: var(--bg-sec);
+    }
+  }
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nodis {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.section {
+  &.margin {
+    padding: 3.6rem 0;
+  }
+}
+
+.grid {
+  display: grid;
+  &.col {
+    &_1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &_2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &_3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &_4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &_5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    &_6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+
+.padding {
+  &_rl {
+    &_xl {
+      padding-left: 6.4rem;
+      padding-right: 6.4rem;
+    }
+    &_l {
+      padding-left: 4.8rem;
+      padding-right: 4.8rem;
+    }
+    &_m {
+      padding-left: 3.2rem;
+      padding-right: 3.2rem;
+    }
+    &_s {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+    &_xs {
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+    }
+  }
+}
+
+.margin {
+  &_rl {
+    &_xl {
+      margin-left: 6.4rem;
+      margin-right: 6.4rem;
+    }
+    &_l {
+      margin-left: 4.8rem;
+      margin-right: 4.8rem;
+    }
+    &_m {
+      margin-left: 3.2rem;
+      margin-right: 3.2rem;
+    }
+    &_s {
+      margin-left: 1.6rem;
+      margin-right: 1.6rem;
+    }
+    &_xs {
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.padding {
+  &_top {
+    &_xl {
+      padding-top: 6.4rem;
+    }
+    &_l {
+      padding-top: 4.8rem;
+    }
+    &_m {
+      padding-top: 3.2rem;
+    }
+    &_s {
+      padding-top: 1.6rem;
+    }
+    &_xs {
+      padding-top: 0.8rem;
+    }
+  }
+  &_bottom {
+    &_xl {
+      padding-bottom: 6.4rem;
+    }
+    &_l {
+      padding-bottom: 4.8rem;
+    }
+    &_m {
+      padding-bottom: 3.2rem;
+    }
+    &_s {
+      padding-bottom: 1.6rem;
+    }
+    &_xs {
+      padding-bottom: 0.8rem;
+    }
+  }
+  &_left {
+    &_xl {
+      padding-left: 6.4rem;
+    }
+    &_l {
+      padding-left: 4.8rem;
+    }
+    &_m {
+      padding-left: 3.2rem;
+    }
+    &_s {
+      padding-left: 1.6rem;
+    }
+    &_xs {
+      padding-left: 0.8rem;
+    }
+  }
+  &_right {
+    &_xl {
+      padding-right: 6.4rem;
+    }
+    &_l {
+      padding-right: 4.8rem;
+    }
+    &_m {
+      padding-right: 3.2rem;
+    }
+    &_s {
+      padding-right: 1.6rem;
+    }
+    &_xs {
+      padding-right: 0.8rem;
+    }
+  }
+}
+
+.margin {
+  &_top {
+    &_xl {
+      margin-top: 6.4rem;
+    }
+    &_l {
+      margin-top: 4.8rem;
+    }
+    &_m {
+      margin-top: 3.2rem;
+    }
+    &_s {
+      margin-top: 1.6rem;
+    }
+    &_xs {
+      margin-top: 0.8rem;
+    }
+  }
+  &_bottom {
+    &_xl {
+      margin-bottom: 6.4rem;
+    }
+    &_l {
+      margin-bottom: 4.8rem;
+    }
+    &_m {
+      margin-bottom: 3.2rem;
+    }
+    &_s {
+      margin-bottom: 1.6rem;
+    }
+    &_xs {
+      margin-bottom: 0.8rem;
+    }
+  }
+  &_left {
+    &_xl {
+      margin-left: 6.4rem;
+    }
+    &_l {
+      margin-left: 4.8rem;
+    }
+    &_m {
+      margin-left: 3.2rem;
+    }
+    &_s {
+      margin-left: 1.6rem;
+    }
+    &_xs {
+      margin-left: 0.8rem;
+    }
+  }
+  &_right {
+    &_xl {
+      margin-right: 6.4rem;
+    }
+    &_l {
+      margin-right: 4.8rem;
+    }
+    &_m {
+      margin-right: 3.2rem;
+    }
+    &_s {
+      margin-right: 1.6rem;
+    }
+    &_xs {
+      margin-right: 0.8rem;
+    }
+  }
+}

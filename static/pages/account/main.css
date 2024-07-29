@@ -1,0 +1,81 @@
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --bg-main: #14181f;
+  --bg-sec: #2c2f35;
+  --bg-dark: #020203;
+  --bg-comp-dark: #101319;
+  --hover: #d6efd8;
+}
+
+.acc_login {
+  height: 100vh;
+  background-color: var(--bg-main);
+}
+.acc_login_cnt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--bg-comp-dark);
+  padding: 4.8rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 1.8rem rgba(0, 0, 0, 0.2);
+  gap: 2.4rem;
+}
+.acc_login_cnt::after {
+  content: "Sign In or Sign Up";
+  position: absolute;
+  color: white;
+  font-size: 3.6rem;
+  width: -moz-max-content;
+  width: max-content;
+  left: 50%;
+  transform: translate(-50%, -150%);
+}
+.acc_login_login {
+  height: 100%;
+}
+.acc_login_login_form {
+  height: 100%;
+}
+.acc_login_login_form_holder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.acc_login_login_form_input input {
+  border-radius: 100rem;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  font-family: "raleway", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.log_btn {
+  background-color: var(--bg-dark);
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  border-radius: 10000rem;
+  padding: 1.2rem 2.4rem;
+  transition: 0.5s;
+}
+.log_btn:hover {
+  cursor: pointer;
+  background-color: var(--bg-sec);
+  transform: scale(1.05);
+}
+.log_btn_cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}/*# sourceMappingURL=main.css.map */
