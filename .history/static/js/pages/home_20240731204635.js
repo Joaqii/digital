@@ -75,17 +75,7 @@ function skipIntro() {
   heronav.classList.remove("hidden");
 }
 
-function handleIntroPlayback() {
-  if (sessionStorage.getItem("introCheck") == "true") {
-    skipIntro();
-  } else {
-    setTimeout(() => {
-      sessionStorage.setItem("introCheck", "true");
-    }, 1000);
-  }
-}
-
-window.addEventListener("DOMContentLoaded", handleIntroPlayback);
+window.onload() = () => skipIntro();
 
 // skipIntro();
 

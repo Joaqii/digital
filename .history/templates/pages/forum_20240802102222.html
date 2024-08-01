@@ -1,9 +1,11 @@
 {% extends 'main.html' %} {% block head %}
 <link rel="stylesheet" href="/static/pages/forum/main.css" />
-{% endblock %} {% block body %}
+{% endblock %}
+{% block body %}
 <section class="section hero">
-  <div class="chatbox_cnt"></div>
+    <div class="chatbox"></div>
 </section>
-{% endblock %} {% block scripts %}
+{% endblock %}
+{% block scripts %}
 <script src="/static/js/pages/forum.js"></script>
 {% endblock %}

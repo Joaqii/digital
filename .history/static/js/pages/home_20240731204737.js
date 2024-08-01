@@ -79,13 +79,11 @@ function handleIntroPlayback() {
   if (sessionStorage.getItem("introCheck") == "true") {
     skipIntro();
   } else {
-    setTimeout(() => {
-      sessionStorage.setItem("introCheck", "true");
-    }, 1000);
+    setTimeout(() => {)
   }
 }
 
-window.addEventListener("DOMContentLoaded", handleIntroPlayback);
+window.onload() = () => handleIntroPlayback();
 
 // skipIntro();
 

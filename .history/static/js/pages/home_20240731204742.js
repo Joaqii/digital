@@ -81,11 +81,12 @@ function handleIntroPlayback() {
   } else {
     setTimeout(() => {
       sessionStorage.setItem("introCheck", "true");
-    }, 1000);
+      skipIntro();
+    })
   }
 }
 
-window.addEventListener("DOMContentLoaded", handleIntroPlayback);
+window.onload() = () => handleIntroPlayback();
 
 // skipIntro();
 
