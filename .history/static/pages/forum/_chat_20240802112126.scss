@@ -1,0 +1,37 @@
+.section {
+  &.hero {
+    height: 100vh;
+    background-color: var(--bg-main);
+    position: relative;
+  }
+}
+
+.chatbox {
+  &_cnt {
+    height: 50rem;
+    width: 80rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+  }
+  &_window {
+    height: 100%;
+    background-color: red;
+  }
+  &_input {
+    // width: 100%;
+    &_form {
+      //   width: 100%;
+      &_input {
+        width: 100%;
+        height: 3rem;
+        padding: 1.2rem;
+      }
+    }
+  }
+}
