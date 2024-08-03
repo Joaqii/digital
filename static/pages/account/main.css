@@ -132,4 +132,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+}
+
+@media (max-width: 60em) {
+  .acc_login_cnt {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }/*# sourceMappingURL=main.css.map */

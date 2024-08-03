@@ -1,0 +1,15 @@
+@media (max-width: 58.75em) {
+  .chatbox {
+    &_cnt {
+      width: 60rem;
+    }
+  }
+}
+
+@media (max-width: 35em) {
+  .chatbox {
+    &_cnt {
+      width: 40rem;
+    }
+  }
+}

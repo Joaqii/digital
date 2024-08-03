@@ -395,4 +395,21 @@ body {
 }
 .home_gallery div:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 56.25em) {
+  .about_cnt {
+    gap: 2.4rem;
+  }
+}
+@media (max-width: 51.125em) {
+  .home_gallery.grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr, 5);
+  }
+}
+@media (max-width: 31.9375em) {
+  .about_text {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */

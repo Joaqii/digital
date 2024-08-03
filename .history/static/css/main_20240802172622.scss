@@ -1,0 +1,39 @@
+@import "variables";
+
+@import "functions";
+@import "anim";
+@import "global";
+
+// 900px
+@media (max-width: 56.25em) {
+  .grid {
+    &.col_2 {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 57.25em) {
+  .nav {
+    &.list {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// 680px
+@media (max-width: 42.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+// 520px
+@media (max-width: 32.5em) {
+  .nav {
+    &.list {
+      display: hidden;
+    }
+  }
+}

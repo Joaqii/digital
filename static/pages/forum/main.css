@@ -70,4 +70,15 @@ body {
 }
 .chatbox_input_form_input:focus {
   outline: none;
+}
+
+@media (max-width: 58.75em) {
+  .chatbox_cnt {
+    width: 60rem;
+  }
+}
+@media (max-width: 35em) {
+  .chatbox_cnt {
+    width: 40rem;
+  }
 }/*# sourceMappingURL=main.css.map */

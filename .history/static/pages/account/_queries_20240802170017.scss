@@ -1,0 +1,10 @@
+@media (max-width: 60em) {
+  .acc {
+    &_login {
+      &_cnt {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+  }
+}

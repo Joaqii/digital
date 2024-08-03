@@ -1,0 +1,12 @@
+@import "variables";
+
+@import "functions";
+@import "anim";
+@import "global";
+
+// 680px
+@media (max-width: 42.5em) {
+  html {
+    font-size: 50%;
+  }
+}
