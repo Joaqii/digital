@@ -22,6 +22,24 @@ body {
   color: white;
   display: flex;
   gap: 0.4rem;
+  position: relative;
+}
+.chatbox_message_delete {
+  position: absolute;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-radius: 100rem;
+  background-color: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.2rem 0.8rem;
+  right: 0;
+  transition: 0.2s;
+}
+.chatbox_message_delete:hover {
+  filter: brightness(0.8);
 }
 .chatbox_message_username {
   font-weight: 800;
@@ -80,5 +98,10 @@ body {
 @media (max-width: 35em) {
   .chatbox_cnt {
     width: 40rem;
+  }
+}
+@media (max-height: 42.5em) {
+  .chatbox_cnt {
+    transform: translate(-50%, -50%) scale(0.8);
   }
 }/*# sourceMappingURL=main.css.map */

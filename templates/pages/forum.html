@@ -5,13 +5,16 @@
   <div class="chatbox_cnt">
     <div class="chatbox_window">
       {% for post in posts|reverse %}
-      <div class="chatbox_message">
+      <div class="chatbox_message" data-id="{{post.id}}">
         {% if post.author == current_user.username %}
         <p class="chatbox_message_username current">{{ post.author }}:</p>
         {% else %}
         <p class="chatbox_message_username">{{ post.author }}:</p>
         {% endif %}
         <p class="chatbox_message_text">{{ post.content }}</p>
+        {% if post.hierarchy == 1 or post.author == current_user.username %}
+        <button class="chatbox_message_delete">Delete</button>
+        {% endif %}
       </div>
 
       {% endfor %}

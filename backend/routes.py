@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, flash
 from flask_login import current_user, login_required
 from .accounts import Posts
 
-
+# Create a Blueprint object for the routes
 routes = Blueprint('routes', '__main__')
 
 @routes.route('/')
@@ -13,6 +13,7 @@ def home():
 
 @routes.route('/chat')
 def forum():
+    # Retrieve all posts from the database
     posts = Posts.query.all()
     selected_route = 'chat'
     return render_template('pages/forum.html', selected_route=selected_route, current_user=current_user, posts=posts)

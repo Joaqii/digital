@@ -13,3 +13,11 @@
     }
   }
 }
+
+@media (max-height: 42.5em) {
+  .chatbox {
+    &_cnt {
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+}

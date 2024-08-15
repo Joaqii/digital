@@ -17,6 +17,24 @@ body {
     color: white;
     display: flex;
     gap: 0.4rem;
+    position: relative;
+    &_delete {
+      position: absolute;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      border-radius: 100rem;
+      background-color: red;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0.2rem 0.8rem;
+      right: 0;
+      transition: 0.2s;
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
     &_username {
       font-weight: 800;
       &.current {
